@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweetie Hush</title>
+    
+    
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        .navbar{
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+        nav{
+            flex: 1;
+            text-align: right;
+        }
+        nav ul{
+            display: inline-block;
+            list-style-type: none;
+        }
+        nav ul li{
+            display: inline-block;
+            margin-right: 20px;
+            
+        }
+        a{
+            text-decoration: none;
+            color: #555;
+        }
+        p{
+            color: #555;
+        }
+        .container{
+            max-width: 1300px;
+            margin: auto;
+            padding-left: 25px;
+            padding-right: 25px;
+
+        }
+        .row{
+
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .col-2{
+            flex-basis: 50%;
+            min-width: 300px;
+        }
+        .col-2 img{
+            max-width: 100%;
+            padding: 50px 0;
+        }
+        .bton{
+            display: inline-block;
+            background: #ff523b;
+            color:#fff;
+            padding: 8px 30px;
+            margin: 30px 0;
+            border-radius: 30px;
+            transition: background 0.5s;
+        
+            
+        }
+        .header{
+            background: radial-gradient(#fff,#ffd6d6);
+
+        }
+        .header.row{
+            margin-top: 70px;
+        }
+        .bton:hover{
+            background: #563434;
+
+        }
+        .catogeries{
+            margin: 70px 0;
+        }
+        .col-3{
+            flex-basis: 30%;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        .small-container{
+            max-width: 1080px;
+            margin: auto;
+            padding: 25px 25px;
+
+        }
+        .col-4{
+            flex-basis:25% ;
+            padding: 10px;
+            min-width: 200px;
+            margin-bottom: 50px;
+            transition: tranform 0.1s;
+            
+        }
+        .col-4 img{
+            width: 100%;
+            
+        }
+        .title{
+            text-align: center;
+            margin:0 auto 80px;
+            position: relative;
+            color: #555;
+        }
+        .title::after{
+            content: '';
+            background: #ff5236;
+            width: 80px;
+            height: 3.5px;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 0;
+            left:50%;
+            transform:translateX(-50%);
+            
+
+        }
+        h4{
+            color:#555;
+            font-weight: normal;
+        }
+        .col-4 p{
+            font: small 14px;
+        }
+        .col-4:hover{
+            transform: translateY(-5px);
+        }
+        .offer{
+            background: radial-gradient(#fff,#ffd6d6);
+            margin-top: 80px;
+            padding: 30px 0;
+            
+
+        }
+        .testimonial{
+            padding-top: 100px;
+
+        }
+        .testimonial .col-3{
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 0 20px 0px rgba(0,0,0, 0.1);
+            cursor: pointer;
+            transition: trasform 0.5s;
+        }
+        .testimonial .col-3 img{
+            
+            width: 50px;
+            margin-top: 20px;
+            border-radius: 50%;
+        }
+        .testimonial .col-3:hover{
+            transform: translateY(-10px);
+        }
+        .brands{
+            margin: 100px auto;
+
+        }
+        .col-5{
+            width: 160px;
+        }
+        .col-5 img{
+            width: 150px;
+            height: 100px; 
+            cursor: pointer;
+            filter: grayscale(100%);
+            
+        }
+         
+        .col-5 img:hover{
+            filter: grayscale(0);
+        }
+        .footer{
+            background: #000;
+            color: #8a8a8a;
+            font-size: 14px;
+            padding: 60px 0 20px;
+        }
+        .footer p{
+            color:#8a8a8a
+        }
+        .footer h3{
+            color:#fff;
+            margin-bottom: 20px;
+        }
+        .footer-col-1,.footer-col-2,.footer-col-3,.footer-col-4{
+            min-width: 250px;
+            margin-bottom: 20px;
+
+        }
+        .footer-col-1
+        {
+            flex-basis: 30%;
+        }
+        .footer-col-2{
+            flex: 1;
+            text-align: center;
+        }
+        .footer-col-2{
+            width: 180px;
+            margin-bottom: 20px;
+        }
+        .footer-col-3,.footer-col-4{
+            flex-basis: 12%;
+            text-align: center;
+            
+        }
+        ul{
+            list-style-type: none;
+        }
+        .copyright{
+            text-align: center;
+        }
+        .menu-icon{
+            width: 28px;
+            margin-left: 20px;
+            display:none;
+            
+        }
+        @media only screen and (max-width:800px){
+            nav ul{
+                position:absolute;
+                top: 70px;
+                left: 0;
+                background:#333;
+                width:100%;
+                overflow: hidden;
+                transition: max-height 0.5s;
+
+
+            }
+            nav ul li{
+                display:block;
+                margin-right: 50px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            nav ul li a{
+                color:#fff;
+            }
+            .menu-icon{
+                display: block;
+                cursor:pointer;
+            }
+
+
+            
+            
+
+        }
+        @media only screen and (max-width:600px){
+            .row{
+
+         
+        align-items: center;
+        
+    }
+    .col-3, .col-4 , .col-2{
+        flex-basis: 100%;
+
+    }
+}
+
+
+
+        
+        
+    
+        
+    </style>
+    
+</head>
+<body>
+    <div class="header">
+    <div class="container">
+    <div class="navbar">
+        <div class="logo">
+            <img src="C:\Users\tanya sinha\Desktop\New folde\logo.jpg" width="150px" height="100">
+        </div>
+        <nav>
+        <ul id="MenuItems">
+            <li><a href="">Home</a></li>
+            <li><a href="">Products</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">Account</a></li>
+        </ul>
+        </nav>
+        <img src="C:\Users\tanya sinha\Desktop\New folde\shopping-cart.png" width="50"height="50">
+        <img src="C:\Users\tanya sinha\Desktop\New folde\download.png" class="menu-icon"width="50"height="50" onclick="menutoggle()">
+        
+        
+        
+    </div>
+    <div class="row">
+        <div class="col-2">
+            <h1>Outfits that will make you<br> comfortably beautiful!</h1>
+            <p>Style everyday to make yourself happy and feel gorgeous with our latest and trendy collections </p>
+            <a class="bton" href="">Explore Now &#8594;</a>
+        </div>
+        <div class="col-2">
+            <img src="C:\Users\tanya sinha\Desktop\New folde\ussama-azam-5IcEBmSOQq0-unsplash.jpg" width="450px">
+        </div>
+    </div>
+    </div>
+    </div>
+   <div class="catogeries">
+       <div class="small-container"><div class="row">
+        <div class="col-3"><img src="C:\Users\tanya sinha\Desktop\New folde\Outfit.jpg" width="500px" height="500px"></div>
+        <div class="col-3"><img src="C:\Users\tanya sinha\Desktop\New folde\Solid V Neck Vintage Sweaters - Anniecloth.jpg"  width="300px" height="300px"></div>
+        <div class="col-3"><img src="C:\Users\tanya sinha\Desktop\New folde\5 Spring Fashion Essentials You Have to Invest On.jpg" width="300px" height="450px" ></div>
+        
+
+    </div></div>
+       
+
+   </div>
+   <div class="small-container">
+       <h2 class="title">Featured Product</h2>
+       
+       <div class="row">
+           <div class="col-4">
+               <img src="C:\Users\tanya sinha\Desktop\New folde\western wear.jpg">
+               <h4>Blush Pink Dress</h4>
+               <p>$140.00</p>
+           </div>
+           <div class="col-4">
+            <img src="C:\Users\tanya sinha\Desktop\New folde\teilo-o1SBgDme5sw-unsplash.jpg">
+            <h4>White Floral Dress</h4>
+            <p>$200.00</p>
+        </div>
+        <div class="col-4">
+            <img src="C:\Users\tanya sinha\Desktop\New folde\81Zt7YHm8wL._UL1500_.jpg">
+            <h4>Block Print T-Shirt</h4>
+            <p>$60.00</p>
+        </div>
+        <div class="col-4">
+            <img src="C:\Users\tanya sinha\Desktop\New folde\jose-martinez-Q76SMw8HVYk-unsplash.jpg">
+            <h4>Brown Aline Dress</h4>
+            <p>$125.00</p>
+        </div>
+       </div>
+       <h2 class="title">Latest Product</h2>
+       <div class="row">
+        <div class="col-4">
+            <img src="C:\Users\tanya sinha\Desktop\New folde\81wa5iOR4IL._UL1500_ (1).jpg">
+            <h4>T-shirt</h4>
+            <p>$140.00</p>
+        </div>
+        <div class="col-4">
+         <img src="C:\Users\tanya sinha\Desktop\New folde\KUSKSB1082-WT-1.jpg" height="320px">
+         <h4>White Dress</h4>
+         <p>$200.00</p>
+     </div>
+     <div class="col-4">
+         <img src="C:\Users\tanya sinha\Desktop\New folde\aa03-1.jpg">
+         <h4>Floral Top</h4>
+         <p>$600.00</p>
+     </div>
+     <div class="col-4">
+         <img src="C:\Users\tanya sinha\Desktop\New folde\mahdi-bafande-QYFmiURtAxc-unsplash.jpg" height="320px">
+         <h4>Jeans</h4>
+         <p>$1250.00</p>
+     </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <img src="C:\Users\tanya sinha\Desktop\New folde\13 Outfits usando color rojo para verte irresistible en la universidad.jpg" height="300px">
+            <h4>Blazer</h4>
+            <p>$1400.00</p>
+        </div>
+        <div class="col-4">
+         <img src="C:\Users\tanya sinha\Desktop\New folde\𝐄𝐱𝐩𝐥𝐢𝐜𝐢𝐭 _ 𝐋𝐮𝐜𝐚𝐬 𝐅𝐫𝐢𝐚𝐫.jpg" height="300px">
+         <h4>Denim Jeans</h4>
+         <p>$2000.00</p>
+     </div>
+     <div class="col-4">
+         <img src="C:\Users\tanya sinha\Desktop\New folde\Karina Style Diaries.jpg" height="300px">
+         <h4>Skirt</h4>
+         <p>$250.00</p>
+     </div>
+     <div class="col-4">
+         <img src="C:\Users\tanya sinha\Desktop\New folde\Van Halen T-Shirt Dress.jpg">
+         <h4>Denim Jeans</h4>
+         <p>$300.00</p>
+     </div>
+    </div>
+    </div>
+    <div class="offer">
+        <div class="small-container">
+            <div class="row">
+                
+                    <div class="col-2">
+                    <img class="offer-img" src="C:\Users\tanya sinha\Desktop\New folde\Sidewalk Low-Top Sneakers in Suede and Sherpa.jpg" width="400px" height="400px"></div>
+                    <div class="col-2">
+                        <h1>OFFER</h1>
+                        <h2>Get 20% off  </h2>
+                        <h1>Hurry Up</h1>
+                        <a href="" class="bton">Buy Now &#8594;</a>
+    
+                        
+    
+                    </div>
+                
+            </div>
+        </div>
+        
+       
+    </div>
+    <div class="testimonial">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-3">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia quidem odit repudiandae in quo fugit beatae incidunt, doloremque facere et distinctio odio blanditiis veritatis tenetur aliquam, nisi dolore, unde rerum?
+
+                    </p>
+                    <img src="C:\Users\tanya sinha\Desktop\New folde\download (2).jpg">
+                    <h3>Loren Watson</h3>
+                </div>
+                <div class="col-3">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure excepturi laboriosam ipsam maxime, nihil omnis earum reprehenderit deserunt quisquam aliquam mollitia tempore, exercitationem, itaque assumenda commodi beatae ducimus eveniet. Iste.
+
+                    </p>
+                    <img src="C:\Users\tanya sinha\Desktop\New folde\download (3).jpg">
+                    <h3>Suzan</h3>
+                </div>
+                <div class="col-3">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti esse odit, magni ipsa mollitia laborum enim pariatur temporibus, eligendi quasi nesciunt facilis. Impedit ipsum explicabo alias corporis illo, et quos.
+
+                    </p>
+                    <img src="C:\Users\tanya sinha\Desktop\New folde\images (4).jpg">
+                    <h3>Huma Kana</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="brands">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-5">
+                    <img src="https://cdn.shortpixel.ai/spai/w_925+q_lossless+ret_img+to_webp/http://brandyuva.in/wp-content/uploads/2018/01/allen-solly-logo.png">
+                </div>
+                <div class="col-5">
+                    <img src="https://cdn.shortpixel.ai/spai/w_925+q_lossless+ret_img+to_webp/http://brandyuva.in/wp-content/uploads/2018/01/levis-logo.png">
+                </div>
+                <div class="col-5">
+                    <img src="https://cdn.shortpixel.ai/spai/w_925+q_lossless+ret_img+to_webp/http://brandyuva.in/wp-content/uploads/2018/01/tommy_hilfiger-logo.png">
+                </div>
+                <div class="col-5">
+                    <img src="https://cdn.shortpixel.ai/spai/w_925+q_lossless+ret_img+to_webp/http://brandyuva.in/wp-content/uploads/2018/01/flying-machine-logo.jpg">
+                </div>
+                <div class="col-5">
+                    <img src="https://cdn.shortpixel.ai/spai/w_925+q_lossless+ret_img+to_webp/http://brandyuva.in/wp-content/uploads/2018/01/giorgio-armani-logo.jpg">
+                </div>
+                
+
+                
+
+
+                
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download our app</h3>
+                <p>Download app for android and ios mobile phone</p>
+                </div>
+                <div class="footer-col-2">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsZ4tINiQlN6BuErVB_HvnNUGHUviDAp9njA&usqp=CAU" width="150px " height="100px">
+                    <p>Our purpose is to sustainably make the pleasureand benifit of sports assible to many</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>useful links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li> Blog posts</li>
+                        <li> Return policy</li>
+                        <li>Join Affiliate</li>
+                        
+                        
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li> Twitter</li>
+                        <li> Instagram</li>
+                        <li>Youtube</li>
+                        
+                        
+                    </ul>
+                </div>
+                
+                
+            </div>
+            <hr>
+            <p class="copyright">Copyright2021 - sweetie Hush</p>
+        </div>
+    </div>
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight="0px";
+        function menutoggle(){
+            if(MenuItems.style.maxHeight=="0px"){
+                MenuItems.style.maxHeight="200px";
+
+            }
+            else{
+                MenuItems.style.maxHeight="0px";
+            }
+        }
+    </script>
+    
+
+       
+
+   
+
+</body>
+</html>
